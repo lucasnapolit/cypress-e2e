@@ -1,4 +1,4 @@
-name: Sanity build
+name: El Report 
 on: push
 jobs:
   cypress-run:
@@ -12,3 +12,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npm run test:addToCart
+      - name: Cypress test report
+      - uses: actions/upload-artifact@v4
+        with:
+           name: EL SHeport
+          path: cypress/reports/html # or path/to/artifact  
